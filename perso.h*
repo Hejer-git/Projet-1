@@ -1,0 +1,21 @@
+#ifndef HEADER_H_INCLUDED
+#define HEADER_H_INCLUDED
+
+typedef struct Personne
+{
+SDL_Surface *images[4][4];
+SDL_Surface *imageActuel;
+SDL_Rect position;
+int direction,up;        /*0:droite 1:gauche*/
+int num;
+double vitesse,acceleration,vitesse_saut;
+
+}Personne;
+
+void initPerso(Personne *p);
+void afficherPerso(Personne p, SDL_Surface * screen);
+void animerPerso (Personne* p);
+void deplacerPerso (Personne *p,int dt);
+void saut (Personne* p) ;
+
+#endif
